@@ -1,0 +1,10 @@
+any newly released high expected ott movie/show will have high number of votes with least score given by voters right?
+How many movies do we have in our dataset across the last few years? Do we have more representation of movies from the last 20 years or is the dataset free from any such skewness?
+f suppose imdb score is 1 with 5000 votes = rated_voting is 5000, but another show with score 7 and 700 votes = rated_voting is 4900 which is less than first but realitically all 5000 voters gave 1 rating right? isn't the rated voting dilutinig the fact?
+imdb score is already a weighted averaged score, I think we should sort the score first and then higher votes shall be considered as first rank
+
+
+
+
+TopShowTitle = CALCULATE(FIRSTNONBLANK('Netflix TV Shows and Movies'[title],1), TOPN(1, 'Netflix TV Shows and Movies', 'Netflix TV Shows and Movies'[RatingVotes], DESC))
+
